@@ -1,10 +1,8 @@
 ﻿  Brep.cpp
-e:\brep\brep\brep.cpp(305): warning C4838: 从“GLdouble”转换到“GLfloat”需要收缩转换
-  HE.cpp
-  Operation.cpp
+e:\brep\brep\brep.cpp(312): warning C4838: 从“GLdouble”转换到“GLfloat”需要收缩转换
   正在生成代码
-  495 of 513 functions (96.5%) were compiled, the rest were copied from previous compilation.
-    422 functions were new in current compilation
-    4 functions had inline decision re-evaluated but remain unchanged
+  0 of 513 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   已完成代码的生成
   Brep.vcxproj -> E:\Brep\Release\Brep.exe

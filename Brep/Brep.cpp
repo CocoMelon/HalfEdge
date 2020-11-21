@@ -45,7 +45,6 @@ void Solid2List(Solid *s);//solid -> display list, point list
 void showSolid(Solid *s);
 const char* getPrimitiveType(GLenum type);
 void setModelView();
-void setLightPos();
 void leftBtnClick(GLint button, GLint action, GLint xMouse, GLint yMouse);//when left mouse button clicked
 void mouseRotate(GLint xMouse, GLint yMouse);//rotate viewing coordinate when mouse move
 void keyFcn(unsigned char key, int x, int y);//keyboard function
@@ -166,9 +165,17 @@ Solid *buildSolid()
 		EulerOperation::mef(v[tmpvnum + ivnum - 1], v[tmpvnum], ilps[i], &ed, &ifs[i]);
 	}
 
+	float ve[3];
+	if (manualInput)
+		std::cout << "Enter sweeping vector(float x, y, z): ";
+	std::cin >> ve[0] >> ve[1] >> ve[2];
+	float dis;
+	if (manualInput)
+		std::cout << "Enter sweeping distance(float d): ";
+	std::cin >> dis;
 
-	float ve[3] = { 0,0,1.0 };
-	Sweeping::translate_sweep(f1, ve, 10);
+	
+	Sweeping::translate_sweep(f1, ve, dis);
 	for (int i = 0; i < (int)ifs.size(); i++) {
 		Sweeping::translate_sweep(ifs[i], ve, 10);
 		EulerOperation::kfmrh(f1, ifs[i]);
